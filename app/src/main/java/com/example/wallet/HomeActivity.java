@@ -22,7 +22,8 @@ public class HomeActivity extends AppCompatActivity {
      private RecyclerView rvCard;
      private CardAdapter adapter;
      private Toolbar toolbar;
-     private String txtNumero,txtNombre,txtFechaExpiracion ;
+     private String txtNumero,txtNombre,txtFechaExpiracion,codSeguridad ;
+     private Card card;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class HomeActivity extends AppCompatActivity {
         adapter= new CardAdapter(obtenerTrajeta(), new CardAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Card cards) {
-                 accederDetalle();
+                 accederDetalle(cards);
 
             }
         });
@@ -79,13 +80,19 @@ public class HomeActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-     public void accederDetalle(){
+     public void accederDetalle(Card card){
+         this.card = card;
 
-        Intent intent = new Intent(this,Detalle_tarjeta.class);
+         String numertarj = card.getNumero();
+         String fechaexpi = card.getFechaExpiracion();
+         String codSeguridad= card.getCodigoSeguridad();
+         String nombreTarj = card.getNombre();
 
-         intent.putExtra("NumeroTarjeta",txtNumero);//Como obtengo una los datos de una sola tarjeta ?
-         intent.putExtra("FechaExpiacion",txtFechaExpiracion);
-         intent.putExtra("NombreTarjeta",txtNombre);
+         Intent intent = new Intent(this,Detalle_tarjeta.class);
+
+         intent.putExtra("NumeroTarjeta",numertarj);
+         intent.putExtra("FechaExpiacion",fechaexpi);
+         intent.putExtra("NombreTarjeta",nombreTarj);
         startActivity(intent);
 
      }

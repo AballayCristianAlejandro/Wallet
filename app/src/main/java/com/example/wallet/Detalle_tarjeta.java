@@ -16,6 +16,7 @@ public class Detalle_tarjeta extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_tarjeta);
         setupInicializacion();
+        asignarDatos();
     }
 
     private void setupInicializacion(){
@@ -29,8 +30,14 @@ public class Detalle_tarjeta extends AppCompatActivity {
              NombreTrajeta = bundle.getString("NombreTarjeta","");
         }
         txtNumero = findViewById(R.id.txtNumero);
-        txtNombre =findViewById(R.id.txtNombre);
+        txtNombre= findViewById(R.id.txtNombre);
         txtFechaExpiracion= findViewById(R.id.txtFechaExpiracion);
 
+    }
+
+    public void asignarDatos(){
+        txtNumero.setText(NumeroTarjeta);
+        txtNombre.setText(NombreTrajeta);
+        txtFechaExpiracion.setText(FechaExpiracion);
     }
 }
