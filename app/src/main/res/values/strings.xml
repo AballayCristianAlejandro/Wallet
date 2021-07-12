@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Wallet</string>
+    <string name="text_numertarjeta">Numero de Tarjeta</string>
+    <string name="text_fecha_expiracion">Fecha de Expiracion </string>
+    <string name="text_cod_seguridad">Codigo de Seguridad</string>
+    <string name="text_nombre_tarjeta">Nombre de la Tarjeta</string>
+    <string name="text_boton">Agregar</string>
+    <string name="text_titulo_terminos">Terminos y Condiciones</string>
+    <string name="text_texto_terminos">Se almacenarán los datos de la tarjeta ingresada de
+    manera local aplicando la última tecnología de encriptado.
+    Estos datos sólamente se encontrarán dentro del
+    dispositivo.\nUsted podrá borrar los datos de la aplicación
+    en el momento que desee.\nEsta aplicación no se hace
+    responsable por el uso indebido de los datos por parte del
+    propietario del dispositivo. Se sugiere que se agregue un
+    patrón de seguridad para evitar el acceso al mismo de
+    manera directa</string>
+    <string name="banco">Banco</string>
+    <string name="marca">Visa</string>
+</resources>
